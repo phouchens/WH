@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Switch } from 'react-native-paper';
-import { StyleSheet, View, TextInput } from 'react-native';
+import { Switch, TextInput, Text } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 
 export default class WeightInput extends React.Component {
   state = {
@@ -39,19 +39,19 @@ export default class WeightInput extends React.Component {
   render() {
     const { isLbs, amount } = this.state;
     return (
-      <View>
+      <View style={styles.container}>
+        <Text>{this.state.isLbs ? "Weight in lbs" : "Weight in kgs"}</Text>
         <Switch value={isLbs} onValueChange={this.convert} />
-        <TextInput keyboardType="numeric" onChangeText={this.onChanged} value={amount} maxLength={6} />
+        <TextInput style={styles.input} placeholder ="Please Enter Weight" mode="outlined" keyboardType="numeric" onChangeText={this.onChanged} value={amount} maxLength={6} />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  bottom: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0
-  }
+  container: {flex: 1, justifyContent: "flex-start",  alignItems:'center' 
+},
+  switchText: {},
+  switch: {},
+  input: {alignSelf: "stretch", marginRight: 10, marginLeft: 10}
 });

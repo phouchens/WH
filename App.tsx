@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
 import WeightInput from './WeightInput';
@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <PaperProvider>
         <Appbar.Header>
-          <Appbar.Content title="WeightliftingHelper" />
+          <Appbar.Content titleStyle={styles.headerTitleStyle} title="WeightliftingHelper" />
         </Appbar.Header>
         <WeightInput />
       </PaperProvider>
@@ -16,4 +16,7 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  headerTitleStyle: { 
+    textAlign:"center"}  
+});
