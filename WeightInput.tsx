@@ -32,29 +32,28 @@ export default class WeightInput extends React.Component {
     const { isLbs, amount } = this.state
     return (
       <View style={styles.masterContainer}>
+        <Text>{this.state.isLbs ? 'Weight in lbs' : 'Weight in kgs'}</Text>
+        <Switch value={isLbs} onValueChange={this.convert} />
+        <TextInput
+          style={styles.input}
+          placeholder="Please Enter Weight"
+          mode="outlined"
+          keyboardType="numeric"
+          onChangeText={this.onChanged}
+          value={amount}
+          maxLength={6}
+        />
         <View style={styles.container}>
-          <Text>{this.state.isLbs ? 'Weight in lbs' : 'Weight in kgs'}</Text>
-          <Switch value={isLbs} onValueChange={this.convert} />
-          <TextInput
-            style={styles.input}
-            placeholder="Please Enter Weight"
-            mode="outlined"
-            keyboardType="numeric"
-            onChangeText={this.onChanged}
-            value={amount}
-            maxLength={6}
-          />
+          {amount ? <PercentageForm amount={amount} /> : null}
         </View>
-        <View>{amount ? <PercentageForm amount={amount} /> : null}</View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'flex-start', alignItems: 'center' },
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  text: { alignItems: 'center' },
   masterContainer: { flex: 1 },
-  switchText: {},
-  switch: {},
   input: { alignSelf: 'stretch', marginRight: 10, marginLeft: 10 }
 })
