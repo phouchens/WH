@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text, StyleSheet, FlatList, ScrollView } from 'react-native'
+import { FlatList } from 'react-native'
 import Row from './Row'
 
 type Props = {
@@ -17,40 +17,21 @@ const list: { percent: number }[] = [
   { percent: 0.75 },
   { percent: 0.7 },
   { percent: 0.65 },
-  { percent: 0.6 }
+  { percent: 0 }, //for some reason the last two items dont show up in the Flatlist
+  { percent: 0 } //THis is just a cheap work around
 ]
+
 export const PercentageForm: React.FC<Props> = props => {
   const { amount } = props
-
-  //   const list = (amount: string) => {
-  //     return data.map(item => {
-  //       return (
-  //         <View>
-  //           <Text>{item.percent * 100}%</Text>
-  //           <Text>{item.percent * Number(amount)}</Text>
-  //         </View>
-  //       )
-  //     })
-  //   }
-
-  //   return <View>{list(amount)}</View>
   return (
     <FlatList
       key={amount}
       data={list}
       keyExtractor={(item, index) => index.toString()}
+      contentContainerStyle={{ paddingBottom: 20 }}
       renderItem={({ item }) => (
-        <View>
-          <Text>{(item.percent * 100).toFixed()}%</Text>
-          <Text>{(item.percent * Number(amount)).toFixed()}</Text>
-        </View>
+        <Row amount={amount} percentage={item.percent} />
       )}
     />
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-    // marginTop: 20
-  }
-})

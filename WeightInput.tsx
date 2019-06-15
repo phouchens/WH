@@ -3,10 +3,11 @@ import { Switch, TextInput, Text } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
 import Utils from './utils'
 import { PercentageForm } from './PercentageForm'
+import { Header } from './headers'
 
 export default class WeightInput extends React.Component {
   state = {
-    isLbs: false,
+    isLbs: true,
     amount: ''
   }
 
@@ -32,8 +33,14 @@ export default class WeightInput extends React.Component {
     const { isLbs, amount } = this.state
     return (
       <View style={styles.masterContainer}>
-        <Text>{this.state.isLbs ? 'Weight in lbs' : 'Weight in kgs'}</Text>
-        <Switch value={isLbs} onValueChange={this.convert} />
+        <Text style={styles.text}>
+          {this.state.isLbs ? 'Weight in lbs' : 'Weight in kgs'}
+        </Text>
+        <Switch
+          style={styles.switch}
+          value={isLbs}
+          onValueChange={this.convert}
+        />
         <TextInput
           style={styles.input}
           placeholder="Please Enter Weight"
@@ -43,17 +50,16 @@ export default class WeightInput extends React.Component {
           value={amount}
           maxLength={6}
         />
-        <View style={styles.container}>
-          {amount ? <PercentageForm amount={amount} /> : null}
-        </View>
+        {amount ? <Header /> : null}
+        <View>{amount ? <PercentageForm amount={amount} /> : null}</View>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  text: { alignItems: 'center' },
+  text: { alignItems: 'center', textAlign: 'center' },
+  switch: { alignSelf: 'center' },
   masterContainer: { flex: 1 },
   input: { alignSelf: 'stretch', marginRight: 10, marginLeft: 10 }
 })
