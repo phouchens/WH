@@ -8,6 +8,9 @@
       "ios",
       "android"
     ],
+    "android": {
+      "package": "io.houchens.weightliftingHelper"
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,6 +27,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Weightlifting Helper is a React Native app that quickly calculates percentages of your one rep max and can quickly convert weights from lbs to kgs.",
+    "githubUrl": "https://github.com/phouchens/WH"
   }
 }
