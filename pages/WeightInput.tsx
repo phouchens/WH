@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Switch, TextInput, Text } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
-import Utils from './utils'
-import { PercentageForm } from './PercentageForm'
-import { Header } from './headers'
+import Utils from '../utils'
+import { PercentageForm } from '../Components/PercentageForm'
+import { Header } from '../Components/headers'
 
 export default class WeightInput extends React.Component {
   state = {
@@ -43,7 +43,7 @@ export default class WeightInput extends React.Component {
         />
         <TextInput
           style={styles.input}
-          placeholder="Please Enter Weight"
+          placeholder="Please Enter Max Weight"
           mode="outlined"
           keyboardType="numeric"
           onChangeText={this.onChanged}

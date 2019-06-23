@@ -7,16 +7,23 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@types/react-navigation-material-bottom-tabs": "^0.3.1",
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-paper": "^2.15.2"
+    "react-native-paper": "^2.15.2",
+    "react-native-vector-icons": "^6.5.0",
+    "react-navigation": "^3.11.0",
+    "react-navigation-material-bottom-tabs": "^1.0.0"
   },
   "devDependencies": {
     "@types/expo": "^32.0.0",
-    "@types/react-native": "^0.57.0",
+    "@types/react": "^16.8.22",
+    "@types/react-native": "^0.57.63",
     "babel-preset-expo": "^5.0.0",
     "prettier": "^1.17.0",
+    "react-native-typescript-transformer": "^1.2.12",
+    "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-react": "^4.0.0",
