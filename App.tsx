@@ -12,13 +12,13 @@ const AppNavigator = createMaterialBottomTabNavigator({
   'Percentage Calculator': {
     screen: WeightInput,
     navigationOptions: {
-      tabBarIcon: () => <Icon name="weight" size={30} color="#FFF" />
+      tabBarIcon: () => <Icon name="weight" size={24} color="#FFF" />
     }
   },
   'Drop Set Calculator': {
     screen: DropSetInput,
     navigationOptions: {
-      tabBarIcon: () => <Icon name="trending-down" size={30} color="#FFF" />
+      tabBarIcon: () => <Icon name="trending-down" size={24} color="#FFF" />
     }
   }
 })

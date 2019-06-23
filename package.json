@@ -7,7 +7,6 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@types/react-navigation-material-bottom-tabs": "^0.3.1",
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
@@ -20,6 +19,8 @@
     "@types/expo": "^32.0.0",
     "@types/react": "^16.8.22",
     "@types/react-native": "^0.57.63",
+    "@types/react-native-vector-icons": "^6.4.1",
+    "@types/react-navigation-material-bottom-tabs": "^0.3.1",
     "babel-preset-expo": "^5.0.0",
     "prettier": "^1.17.0",
     "react-native-typescript-transformer": "^1.2.12",
