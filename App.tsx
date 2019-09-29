@@ -4,6 +4,7 @@ import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper'
 import { Appbar } from 'react-native-paper'
 import { createAppContainer } from 'react-navigation'
 import WeightInput from './pages/WeightInput'
+import { TodaysWorkout } from './pages/TodaysWorkout'
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
 import DropSetInput from './pages/DropSetInput'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -19,6 +20,12 @@ const AppNavigator = createMaterialBottomTabNavigator({
     screen: DropSetInput,
     navigationOptions: {
       tabBarIcon: () => <Icon name="trending-down" size={24} color="#FFF" />
+    }
+  },
+  'Todays Workout': {
+    screen: TodaysWorkout,
+    navigationOptions: {
+      tabBarIcon: () => <Icon name="chart-bar" size={24} color="#FFF" />
     }
   }
 })
